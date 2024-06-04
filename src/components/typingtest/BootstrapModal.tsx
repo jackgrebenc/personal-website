@@ -17,8 +17,8 @@ const BootstrapModal = ({
   const handleShow = () => setShow(true);
 
   const resetTest = () => {
-    handleClose();
     window.location.reload();
+    handleClose();
   };
   return (
     <>
@@ -46,7 +46,7 @@ const BootstrapModal = ({
                   : 0}
               </div>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer center">
               <button
                 type="button"
                 className="btn btn-primary"
