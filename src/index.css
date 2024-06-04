@@ -1,15 +1,19 @@
 html {
   background-color: rgba(240, 248, 255, 0.8);
+  
 }
 
 .main-style {
   font-family: 'Arial', sans-serif; 
   background-color: rgba(240, 248, 255, 0.8);
-  padding: 20px;
   text-align: center; 
   width: 100%;
 }
 
+.title {
+  display:inline;
+  padding:20px;
+  }
 /* Box styles */
 .box {
   background-color: rgba(173, 216, 230, 0.2);
@@ -58,11 +62,12 @@ html {
   outline: none; /* Remove default focus outline */
 }
 
-.time {
+.timer {
   background-color:rgba(127, 255, 212, 0.5);
   display:inline-block;
   border-radius:1vh;
   padding:5px;
+  font-size:30px;
 }
 .words {
   font-size:25px;

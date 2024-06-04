@@ -1,12 +1,12 @@
-import WordBox from "./components/typingtest/WordBox";
-import TextInput from "./components/typingtest/TextInput";
+import WordBox from "../components/typingtest/WordBox";
+import TextInput from "../components/typingtest/TextInput";
 import { useState } from "react";
-import { generate, count } from "random-words";
-import Timer from "./components/typingtest/Timer";
-import BootstrapModal from "./components/typingtest/BootstrapModal";
-import { formatSecondsToJSX } from "./utils/timeFormat";
+import { generate } from "random-words";
+import Timer from "../components/typingtest/Timer";
+import BootstrapModal from "../components/typingtest/BootstrapModal";
+import { formatSecondsToJSX } from "../utils/timeFormat";
 
-function App() {
+function TypingTest() {
   const getWords = (count: number) => {
     let words = generate(count);
     if (typeof words === "string") {
@@ -47,24 +47,24 @@ function App() {
   };
 
   return (
-    <div className="main-style">
-      <h1>Typing Test</h1>
-      <div className="words">
-        <div className="time">
-          {timing ? (
-            <Timer initialSeconds={timerInterval} onTimerDone={onTimerDone}>
-              <BootstrapModal
-                message="Times up!"
-                interval={timerInterval}
-                currentIndex={state.currentIndex}
-              />
-            </Timer>
-          ) : (
-            formatSecondsToJSX(timerInterval)
-          )}
-        </div>
+    <div>
+      <h1 className="title">Typing Test</h1>
+      <span className="timer">
+        {timing ? (
+          <Timer initialSeconds={timerInterval} onTimerDone={onTimerDone}>
+            <BootstrapModal
+              message="Times up!"
+              interval={timerInterval}
+              currentIndex={state.currentIndex}
+            />
+          </Timer>
+        ) : (
+          formatSecondsToJSX(timerInterval)
+        )}
+      </span>
+      <span className="words">
         <WordBox items={state.items} highlightIndex={state.currentIndex} />
-      </div>
+      </span>
 
       <div className="chat-bar">
         <TextInput
@@ -79,4 +79,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default TypingTest;
