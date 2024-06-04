@@ -1,4 +1,4 @@
-import "../index.css";
+import "../../index.css";
 interface Props {
   items: string[];
   highlightIndex: number;
