@@ -1,0 +1,60 @@
+/* Container styles */
+.container {
+  width: 100%; /* Full width to center the box horizontally */
+}
+
+/* Box styles */
+.box {
+  background-color: rgba(0, 123, 255, 0.1); /* Translucent light blue */
+  padding: 20px; /* Padding inside the box */
+  text-align: center; /* Centers the text inside the box */
+  width: auto; /* Auto width based on content */
+  margin: 0 auto; /* Auto margins for horizontal centering */
+  border-radius:1vh;
+}
+
+.center {
+  justify-content:right;
+  margin-top: 1vh;
+}
+
+.chat-bar {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  gap: 10px; /* Space between items */
+  padding: 10px;
+  width: auto; /* Adjust width as needed */
+}
+
+/* Additional CSS for responsiveness (optional) */
+@media (max-width: 600px) {
+  .chat-bar {
+    flex-direction: column;
+  }
+}
+
+.chat-bar input[type="text"] {
+  height: 40px; /* Set a fixed height */
+  border: 2px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0 10px; /* Padding inside the text field */
+  flex-grow: 1; /* Allows the text field to grow */
+}
+
+/* Focus state for better user experience */
+.chat-bar input[type="text"]:focus {
+  border-color: #007BFF; /* Blue border on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+.time {
+  background-color:rgba(127, 255, 212, 0.5);
+  display:inline-block;
+  border-radius:1vh;
+  padding:5px;
+}
+.words {
+  font-size:25px;
+}
+
