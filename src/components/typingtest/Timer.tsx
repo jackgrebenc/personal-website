@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { formatSecondsToJSX } from "../utils/timeFormat";
+import { formatSecondsToJSX } from "../../utils/timeFormat";
 
 interface TimerProps {
   initialSeconds: number;

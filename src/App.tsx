@@ -1,9 +1,9 @@
-import WordBox from "./components/WordBox";
-import TextInput from "./components/TextInput";
+import WordBox from "./components/typingtest/WordBox";
+import TextInput from "./components/typingtest/TextInput";
 import { useState } from "react";
 import { generate, count } from "random-words";
-import Timer from "./components/Timer";
-import BootstrapModal from "./components/BootstrapModal";
+import Timer from "./components/typingtest/Timer";
+import BootstrapModal from "./components/typingtest/BootstrapModal";
 import { formatSecondsToJSX } from "./utils/timeFormat";
 
 function App() {
