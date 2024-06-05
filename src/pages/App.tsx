@@ -11,7 +11,7 @@ function App() {
       <div className="main-style">
         <NavBar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/typing-test" element={<TypingTest />} />
           <Route path="/projects-home" element={<ProjectsHome />} />
           <Route path="/deep-learning-cae" element={<DeepLearningCAE />} />

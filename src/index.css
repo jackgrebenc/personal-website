@@ -1,11 +1,11 @@
 html {
-  background-color: rgba(240, 248, 255, 0.8);
+  background-color: rgba(173, 208, 238, 0.8);
   
 }
 
 .main-style {
   font-family: 'Arial', sans-serif; 
-  background-color: rgba(240, 248, 255, 0.8);
+  background-color: rgba(173, 208, 238, 0.8);
   text-align: center; 
   width: 100%;
 }
@@ -16,10 +16,10 @@ html {
   }
 /* Box styles */
 .box {
-  background-color: rgba(173, 216, 230, 0.2);
+  background-color: rgba(229, 248, 255, 0.949);
   padding: 20px; /* Padding inside the box */
   text-align: center; /* Centers the text inside the box */
-  width: auto; /* Auto width based on content */
+  width: 95%; /* Auto width based on content */
   margin: 0 auto; /* Auto margins for horizontal centering */
   border-radius:1vh;
   box-shadow: 0 0 0 6px rgba(0, 0, 139, 0.6),

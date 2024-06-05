@@ -10,7 +10,14 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <NavLink className="nav-link" to="/home" aria-current="page">
+              <NavLink
+                className="nav-link"
+                to="/"
+                aria-current="page"
+                onClick={() => {
+                  if (isOpen) setIsOpen(!isOpen); // Toggle the open state on click
+                }}
+              >
                 Home
               </NavLink>
             </li>
