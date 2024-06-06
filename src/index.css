@@ -1,15 +1,8 @@
-.main-style {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif; /* Example of setting a global font */
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -21,22 +14,19 @@ body {
   display:inline;
   padding:25px;
   }
-/* Box styles */
+  
+
 .box {
   background-color: rgba(229, 248, 255, 0.949);
-  padding: 20px; /* Padding inside the box */
-  text-align: center; /* Centers the text inside the box */
-  width: 95%; /* Auto width based on content */
-  margin: 0 auto; /* Auto margins for horizontal centering */
+  padding: 20px; 
+  text-align: center; 
+  width: 95%; 
+  margin: 0 auto;
   border-radius:1vh;
   box-shadow: 0 0 0 3px rgba(0, 0, 139, 0.6),
   0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top:12px;
-}
-
-.center {
-  justify-content:right;
-  margin-top: 1vh;
+  font-size:2vw;
 }
 
 .chat-bar {
@@ -48,13 +38,6 @@ body {
   width: auto; /* Adjust width as needed */
 }
 
-/* Additional CSS for responsiveness (optional) */
-@media (max-width: 600px) {
-  .chat-bar {
-    flex-direction: column;
-  }
-}
-
 .chat-bar input[type="text"] {
   height: 40px; /* Set a fixed height */
   border: 2px solid #ccc; /* Light grey border */
@@ -63,21 +46,12 @@ body {
   flex-grow: 1; /* Allows the text field to grow */
 }
 
-/* Focus state for better user experience */
-.chat-bar input[type="text"]:focus {
-  border-color: #007BFF; /* Blue border on focus */
-  outline: none; /* Remove default focus outline */
-}
-
 .timer {
   background-color:rgba(127, 255, 212, 0.5);
   display:inline-block;
   border-radius:1vh;
   padding:5px;
   font-size:30px;
-}
-.words {
-  font-size:25px;
 }
 
 

@@ -68,10 +68,7 @@ function TypingTest() {
           formatSecondsToJSX(time)
         )}
       </span>
-      <span className="words">
-        <WordBox items={state.items} highlightIndex={state.currentIndex} />
-      </span>
-
+      <WordBox items={state.items} highlightIndex={state.currentIndex} />
       <div className="chat-bar">
         <TextInput
           initialValue={state.textValue}
