@@ -1,5 +1,4 @@
 import WordBox from "../components/typingtest/WordBox";
-import TextInput from "../components/typingtest/TextInput";
 import { useState } from "react";
 import { generate } from "random-words";
 import Timer from "../components/typingtest/Timer";
@@ -18,7 +17,6 @@ function TypingTest() {
   const initialState = {
     items: getWords(120),
     currentIndex: 0,
-    textValue: "",
   };
   const timerInterval = 30;
 
@@ -27,6 +25,14 @@ function TypingTest() {
   const [time, setTime] = useState(timerInterval);
   const [disabled, setDisabled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    if (checkValid(value)) {
+      setValue("");
+    }
+  };
 
   const checkValid = (word: string) => {
     if (!timing && word.length >= 0) {
@@ -47,6 +53,7 @@ function TypingTest() {
   };
 
   const onNewTest = () => {
+    setValue("");
     setDisabled(false);
     setOpen(false);
     setState(initialState);
@@ -70,11 +77,14 @@ function TypingTest() {
       </span>
       <WordBox items={state.items} highlightIndex={state.currentIndex} />
       <div className="chat-bar">
-        <TextInput
-          initialValue={state.textValue}
-          checkValid={checkValid}
-          disabled={disabled}
-        />
+        <span>
+          <input
+            type="text"
+            value={value}
+            disabled={disabled}
+            onChange={handleInputChange}
+          />
+        </span>
         <button type="button" className="btn btn-danger" onClick={onFinish}>
           End Test
         </button>

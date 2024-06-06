@@ -13,7 +13,6 @@ const Timer: React.FC<TimerProps> = ({
   setGlobalTime,
 }) => {
   const [seconds, setSeconds] = useState(initialSeconds);
-  const [finished, setFinished] = useState(false);
 
   useEffect(() => {
     let interval: number = 0;
@@ -24,7 +23,8 @@ const Timer: React.FC<TimerProps> = ({
       setGlobalTime(seconds);
     } else {
       window.clearInterval(interval);
-      setFinished(true);
+      setSeconds(0);
+      setGlobalTime(0);
       onTimerDone();
     }
     return () => window.clearInterval(interval);
