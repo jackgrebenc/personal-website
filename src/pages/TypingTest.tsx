@@ -20,15 +20,13 @@ function TypingTest() {
     currentIndex: 0,
     textValue: "",
   };
+  const timerInterval = 30;
+
   const [state, setState] = useState(initialState);
   const [timing, setTiming] = useState(false);
+  const [time, setTime] = useState(timerInterval);
   const [disabled, setDisabled] = useState(false);
-
-  const resetState = () => {
-    window.location.reload();
-  };
-
-  const timerInterval = 30;
+  const [open, setOpen] = useState(false);
 
   const checkValid = (word: string) => {
     if (!timing && word.length >= 0) {
@@ -42,8 +40,18 @@ function TypingTest() {
     return false;
   };
 
-  const onTimerDone = () => {
+  const onFinish = () => {
     setDisabled(true);
+    setTiming(false);
+    setOpen(true);
+  };
+
+  const onNewTest = () => {
+    setDisabled(false);
+    setOpen(false);
+    setState(initialState);
+    setTiming(false);
+    setTime(timerInterval);
   };
 
   return (
@@ -51,15 +59,13 @@ function TypingTest() {
       <h1 className="title">Typing Test</h1>
       <span className="timer">
         {timing ? (
-          <Timer initialSeconds={timerInterval} onTimerDone={onTimerDone}>
-            <BootstrapModal
-              message="Times up!"
-              interval={timerInterval}
-              currentIndex={state.currentIndex}
-            />
-          </Timer>
+          <Timer
+            initialSeconds={timerInterval}
+            onTimerDone={onFinish}
+            setGlobalTime={setTime}
+          />
         ) : (
-          formatSecondsToJSX(timerInterval)
+          formatSecondsToJSX(time)
         )}
       </span>
       <span className="words">
@@ -72,9 +78,20 @@ function TypingTest() {
           checkValid={checkValid}
           disabled={disabled}
         />
-        <button type="button" className="btn btn-primary" onClick={resetState}>
+        <button type="button" className="btn btn-danger" onClick={onFinish}>
+          End Test
+        </button>
+        <button type="button" className="btn btn-primary" onClick={onNewTest}>
           New Test
         </button>
+        {open && (
+          <BootstrapModal
+            message="Results are in!"
+            interval={timerInterval - time}
+            currentIndex={state.currentIndex}
+            onClose={onNewTest}
+          />
+        )}
       </div>
     </div>
   );

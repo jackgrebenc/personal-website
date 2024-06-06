@@ -3,14 +3,14 @@ import { formatSecondsToJSX } from "../../utils/timeFormat";
 
 interface TimerProps {
   initialSeconds: number;
-  children?: React.ReactNode;
   onTimerDone: () => void;
+  setGlobalTime: (seconds: number) => void;
 }
 
 const Timer: React.FC<TimerProps> = ({
   initialSeconds,
-  children,
   onTimerDone,
+  setGlobalTime,
 }) => {
   const [seconds, setSeconds] = useState(initialSeconds);
   const [finished, setFinished] = useState(false);
@@ -21,6 +21,7 @@ const Timer: React.FC<TimerProps> = ({
       interval = window.setInterval(() => {
         setSeconds(seconds - 1);
       }, 1000);
+      setGlobalTime(seconds);
     } else {
       window.clearInterval(interval);
       setFinished(true);
@@ -29,12 +30,7 @@ const Timer: React.FC<TimerProps> = ({
     return () => window.clearInterval(interval);
   }, [seconds]);
 
-  return (
-    <>
-      {formatSecondsToJSX(seconds)}
-      {finished && children}
-    </>
-  );
+  return <>{formatSecondsToJSX(seconds)}</>;
 };
 
 export default Timer;

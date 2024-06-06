@@ -1,18 +1,25 @@
-html {
-  background-color: rgba(173, 208, 238, 0.8);
-  
+.main-style {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.main-style {
-  font-family: 'Arial', sans-serif; 
-  background-color: rgba(173, 208, 238, 0.8);
-  text-align: center; 
-  width: 100%;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Example of setting a global font */
 }
+
+body {
+  background: linear-gradient(to bottom right, rgba(175, 202, 227, 0.989), rgba(255, 255, 255, 0.5));
+}
+
 
 .title {
   display:inline;
-  padding:20px;
+  padding:25px;
   }
 /* Box styles */
 .box {
@@ -22,7 +29,7 @@ html {
   width: 95%; /* Auto width based on content */
   margin: 0 auto; /* Auto margins for horizontal centering */
   border-radius:1vh;
-  box-shadow: 0 0 0 6px rgba(0, 0, 139, 0.6),
+  box-shadow: 0 0 0 3px rgba(0, 0, 139, 0.6),
   0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top:12px;
 }

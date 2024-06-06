@@ -17,6 +17,7 @@ function WordBox({ items, highlightIndex }: Props) {
                 ? "text-secondary"
                 : ""
             }
+            key={index}
           >
             {item + " "}
           </span>

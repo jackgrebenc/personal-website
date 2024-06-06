@@ -4,27 +4,20 @@ interface BootstrapModalProps {
   message: string;
   interval: number;
   currentIndex: number;
+  onClose: () => void;
 }
 
 const BootstrapModal = ({
   message,
   interval,
   currentIndex,
+  onClose,
 }: BootstrapModalProps) => {
-  const [show, setShow] = useState(true);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const resetTest = () => {
-    window.location.reload();
-    handleClose();
-  };
   return (
     <>
       <div
-        className={show ? "modal fade show" : "modal fade"}
-        style={{ display: show ? "block" : "none" }}
+        className="modal fade show"
+        style={{ display: "block" }}
         tabIndex={-1}
       >
         <div className="modal-dialog">
@@ -34,15 +27,16 @@ const BootstrapModal = ({
               <button
                 type="button"
                 className="btn-close"
-                onClick={resetTest}
+                onClick={onClose}
               ></button>
             </div>
             <div className="modal-body">
               <p>{message}</p>
+              <p>Time elapsed: {interval} seconds</p>
               <div>
                 Words Per Minute:{" "}
                 {currentIndex > 0 && interval > 0
-                  ? currentIndex * (60 / interval)
+                  ? Math.round(currentIndex * (60 / interval))
                   : 0}
               </div>
             </div>
@@ -50,7 +44,7 @@ const BootstrapModal = ({
               <button
                 type="button"
                 className="btn btn-primary"
-                onClick={resetTest}
+                onClick={onClose}
               >
                 New Test
               </button>
@@ -59,7 +53,7 @@ const BootstrapModal = ({
         </div>
       </div>
 
-      {show && <div className="modal-backdrop fade show"></div>}
+      <div className="modal-backdrop fade show"></div>
     </>
   );
 };
