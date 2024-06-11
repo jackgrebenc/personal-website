@@ -23,6 +23,8 @@ body {
   width: 95%; 
   margin: 0 auto;
   border-radius:1vh;
+  box-shadow: 0 0 0 3px rgba(0, 0, 139, 0.6),
+  0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top:12px;
   font-size:2vw;
 }
