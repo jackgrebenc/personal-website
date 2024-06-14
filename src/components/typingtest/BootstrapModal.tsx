@@ -3,14 +3,14 @@ import React, { useState } from "react";
 interface BootstrapModalProps {
   message: string;
   interval: number;
-  currentIndex: number;
+  numWords: number;
   onClose: () => void;
 }
 
 const BootstrapModal = ({
   message,
   interval,
-  currentIndex,
+  numWords,
   onClose,
 }: BootstrapModalProps) => {
   return (
@@ -31,19 +31,34 @@ const BootstrapModal = ({
               ></button>
             </div>
             <div className="modal-body">
-              <p>{message}</p>
-              <p>Time elapsed: {interval} seconds</p>
-              <div>
-                Words Per Minute:{" "}
-                {currentIndex > 0 && interval > 0
-                  ? Math.round(currentIndex * (60 / interval))
-                  : 0}
-              </div>
+              <table className="table">
+                <tbody>
+                  <tr style={{ borderBottom: "hidden" }}>
+                    <td>{message}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Time Elapsed (s)</th>
+                    <td>{interval}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Total Words</th>
+                    <td>{numWords}</td>
+                  </tr>
+                  <tr style={{ borderBottom: "hidden" }}>
+                    <th scope="row">Words Per Minute</th>
+                    <td>
+                      {numWords > 0 && interval > 0
+                        ? Math.round(numWords * (60 / interval))
+                        : 0}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div className="modal-footer center">
+            <div className="modal-footer d-flex justify-content-center">
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-primary flex-fill"
                 onClick={onClose}
               >
                 New Test
@@ -52,7 +67,6 @@ const BootstrapModal = ({
           </div>
         </div>
       </div>
-
       <div className="modal-backdrop fade show"></div>
     </>
   );

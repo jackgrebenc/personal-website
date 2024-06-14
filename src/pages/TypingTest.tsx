@@ -3,7 +3,7 @@ import { useState } from "react";
 import { generate } from "random-words";
 import Timer from "../components/typingtest/Timer";
 import BootstrapModal from "../components/typingtest/BootstrapModal";
-import { formatSecondsToJSX } from "../utils/timeFormat";
+import { formatSeconds } from "../utils/timeFormat";
 
 function TypingTest() {
   const getWords = (count: number) => {
@@ -15,23 +15,37 @@ function TypingTest() {
   };
 
   const initialState = {
-    items: getWords(120),
+    items: getWords(50),
     currentIndex: 0,
   };
-  const timerInterval = 30;
 
   const [state, setState] = useState(initialState);
   const [timing, setTiming] = useState(false);
+  const [timerInterval, setTimerInterval] = useState(30);
   const [time, setTime] = useState(timerInterval);
   const [disabled, setDisabled] = useState(false);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+  const [score, setScore] = useState(0);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     if (checkValid(value)) {
       setValue("");
+      setScore((currentScore) => currentScore + 1);
+
+      if (state.currentIndex === state.items.length - 1) {
+        setState(initialState);
+      }
     }
+  };
+  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let newTime = parseInt(event.target.value);
+    if (isNaN(newTime)) {
+      newTime = 0;
+    }
+    setTimerInterval(newTime);
+    setTime(newTime);
   };
 
   const checkValid = (word: string) => {
@@ -59,6 +73,7 @@ function TypingTest() {
     setState(initialState);
     setTiming(false);
     setTime(timerInterval);
+    setScore(0);
   };
 
   return (
@@ -72,9 +87,23 @@ function TypingTest() {
             setGlobalTime={setTime}
           />
         ) : (
-          formatSecondsToJSX(time)
+          <div className="input-wrapper">
+            <input
+              type="text"
+              className="input-with-suffix"
+              value={timerInterval}
+              min="0"
+              max="99"
+              maxLength={2}
+              size={4}
+              disabled={disabled}
+              onChange={handleTimeChange}
+            />
+            <span className="suffix">(s)</span>
+          </div>
         )}
       </span>
+
       <WordBox items={state.items} highlightIndex={state.currentIndex} />
       <div className="chat-bar">
         <span>
@@ -95,7 +124,7 @@ function TypingTest() {
           <BootstrapModal
             message="Results are in!"
             interval={timerInterval - time}
-            currentIndex={state.currentIndex}
+            numWords={score}
             onClose={onNewTest}
           />
         )}
