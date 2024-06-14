@@ -14,12 +14,12 @@ function TypingTest() {
     return words;
   };
 
-  const initialState = {
-    items: getWords(50),
-    currentIndex: 0,
-  };
+  const displayNumWords = 50;
 
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState({
+    items: getWords(displayNumWords),
+    currentIndex: 0,
+  });
   const [timing, setTiming] = useState(false);
   const [timerInterval, setTimerInterval] = useState(30);
   const [time, setTime] = useState(timerInterval);
@@ -35,7 +35,7 @@ function TypingTest() {
       setScore((currentScore) => currentScore + 1);
 
       if (state.currentIndex === state.items.length - 1) {
-        setState(initialState);
+        setState({ items: getWords(displayNumWords), currentIndex: 0 });
       }
     }
   };
@@ -70,7 +70,7 @@ function TypingTest() {
     setValue("");
     setDisabled(false);
     setOpen(false);
-    setState(initialState);
+    setState({ items: getWords(displayNumWords), currentIndex: 0 });
     setTiming(false);
     setTime(timerInterval);
     setScore(0);
@@ -79,30 +79,6 @@ function TypingTest() {
   return (
     <div>
       <h1 className="title">Typing Test</h1>
-      <span className="timer">
-        {timing ? (
-          <Timer
-            initialSeconds={timerInterval}
-            onTimerDone={onFinish}
-            setGlobalTime={setTime}
-          />
-        ) : (
-          <div className="input-wrapper">
-            <input
-              type="text"
-              className="input-with-suffix"
-              value={timerInterval}
-              min="0"
-              max="99"
-              maxLength={2}
-              size={4}
-              disabled={disabled}
-              onChange={handleTimeChange}
-            />
-            <span className="suffix">(s)</span>
-          </div>
-        )}
-      </span>
 
       <WordBox items={state.items} highlightIndex={state.currentIndex} />
       <div className="chat-bar">
@@ -113,6 +89,30 @@ function TypingTest() {
             disabled={disabled}
             onChange={handleInputChange}
           />
+        </span>
+        <span className="timer">
+          {timing ? (
+            <Timer
+              initialSeconds={timerInterval}
+              onTimerDone={onFinish}
+              setGlobalTime={setTime}
+            />
+          ) : (
+            <div className="input-wrapper">
+              <input
+                type="text"
+                className="input-with-suffix"
+                value={timerInterval}
+                min="0"
+                max="99"
+                maxLength={2}
+                size={4}
+                disabled={disabled}
+                onChange={handleTimeChange}
+              />
+              <span className="suffix">(s)</span>
+            </div>
+          )}
         </span>
         <button type="button" className="btn btn-danger" onClick={onFinish}>
           End Test

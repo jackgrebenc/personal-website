@@ -9,11 +9,13 @@ function App() {
     <Router>
       <div>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/typing-test" element={<TypingTest />} />
-          <Route path="/deep-learning-cae" element={<DeepLearningCAE />} />
-        </Routes>
+        <div className="main-contents">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/typing-test" element={<TypingTest />} />
+            <Route path="/deep-learning-cae" element={<DeepLearningCAE />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

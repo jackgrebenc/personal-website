@@ -6,7 +6,7 @@ interface Props {
 
 function WordBox({ items, highlightIndex }: Props) {
   return (
-    <div className="box">
+    <div className="box word-box">
       <p>
         {items.map((item, index) => (
           <span

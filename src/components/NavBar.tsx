@@ -1,17 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-
+import { Projects } from "./Projects";
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="pb-2">
-      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+      <nav className="navbar navbar-expand-lg navbar-light border-bottom border-dark justify-content-center">
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
-            <li className="nav-item active">
+            <li className="nav-item">
               <NavLink
-                className="nav-link"
+                className="nav-link "
                 to="/"
                 aria-current="page"
                 onClick={() => {
@@ -27,10 +27,8 @@ function NavBar() {
                 to="#"
                 id="navbarDropdownMenuLink"
                 role="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsOpen(!isOpen); // Toggle the open state on click
-                }}
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
                 aria-haspopup="true"
                 aria-expanded={isOpen}
               >
@@ -40,24 +38,15 @@ function NavBar() {
                 className={isOpen ? "dropdown-menu show" : "dropdown-menu"}
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <NavLink
-                  className="dropdown-item"
-                  to="/typing-test"
-                  onClick={(e) => {
-                    setIsOpen(!isOpen); // Toggle the open state on click
-                  }}
-                >
-                  Typing Test Web App
-                </NavLink>
-                <NavLink
-                  className="dropdown-item"
-                  to="/deep-learning-cae"
-                  onClick={(e) => {
-                    setIsOpen(!isOpen); // Toggle the open state on click
-                  }}
-                >
-                  Deep Learning CAE
-                </NavLink>
+                {Projects.map((item) => (
+                  <NavLink
+                    className="dropdown-item"
+                    to={item.link}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.title}
+                  </NavLink>
+                ))}
               </div>
             </li>
           </ul>
