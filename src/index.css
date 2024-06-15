@@ -36,7 +36,7 @@ body {
 }
 
 .word-box {
-  padding: 4vh; 
+  padding:2vw; 
   text-align: center; 
   width:97%;
   font-size:2vw;
@@ -48,8 +48,8 @@ body {
   display: flex;
   align-items: center; /* Vertically center items */
   justify-content: center; /* Horizontally center items */
-  gap:1vh; /* Space between items */
-  padding:1vh;
+  gap:1vw; /* Space between items */
+  padding:1vw;
   width: auto; /* Adjust width as needed */
 }
 
@@ -57,7 +57,7 @@ body {
   height:4.5vh; /* Set a fixed height */
   border: 2px solid #ccc; /* Light grey border */
   border-radius: 5px; /* Rounded corners */
-  padding: 0 10px; /* Padding inside the text field */
+  padding: 0 1vw; /* Padding inside the text field */
   flex-grow: 1; /* Allows the text field to grow */
 }
 
@@ -65,8 +65,8 @@ body {
   background-color:rgba(127, 255, 212, 0.5);
   display:inline-block;
   border-radius:1vh;
-  padding:0.5vh;
-  font-size:3vh;
+  padding:0.5vw;
+  font-size:3vw;
 }
 
 .input-wrapper {
