@@ -59,7 +59,7 @@ body {
 }
 
 .timer {
-  background-color:var(--dark-green);
+  background-color:rgba(127, 255, 212, 0.5);
   display:inline-block;
   border-radius:1vh;
   padding:5px;
@@ -133,7 +133,7 @@ body {
 }
 
 .biography-box {
-  border-left: 5px solid #004d40; /* Dark greenish-blue border */
+  border-left: 5px solid var(--dark-green); /* Dark greenish-blue border */
   padding: 20px;
   margin: 20px 0;
   border-radius: 5px;
