@@ -6,7 +6,7 @@ function NavBar() {
 
   return (
     <div className="pb-2">
-      <nav className="navbar navbar-expand-lg navbar-light border-bottom border-dark justify-content-center">
+      <nav className="navbar navbar-expand navbar-light border-bottom border-dark justify-content-center">
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
