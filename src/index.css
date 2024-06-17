@@ -54,7 +54,8 @@ body {
 }
 
 .chat-bar input[type="text"] {
-  height:4.5vh; /* Set a fixed height */
+  height:6vh; /* Set a fixed height */
+  font-size:3vw;
   border: 2px solid #ccc; /* Light grey border */
   border-radius: 5px; /* Rounded corners */
   padding: 0 1vw; /* Padding inside the text field */
@@ -65,7 +66,7 @@ body {
   background-color:rgba(127, 255, 212, 0.5);
   display:inline-block;
   border-radius:1vh;
-  padding:0.5vw;
+  padding:0.2vw;
   font-size:3vw;
 }
 

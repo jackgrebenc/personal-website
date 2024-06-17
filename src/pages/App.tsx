@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import Home from "./Home";
 import TypingTest from "./TypingTest";
 import DeepLearningCAE from "./DeepLearningCAE";
+import { typingTest, deepLearningCAE } from "../components/Projects";
 
 function App() {
   return (
@@ -12,8 +13,14 @@ function App() {
         <div className="main-contents">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/typing-test" element={<TypingTest />} />
-            <Route path="/deep-learning-cae" element={<DeepLearningCAE />} />
+            <Route
+              path="/typing-test"
+              element={<TypingTest title={typingTest.title} />}
+            />
+            <Route
+              path="/deep-learning-cae"
+              element={<DeepLearningCAE title={deepLearningCAE.title} />}
+            />
           </Routes>
         </div>
       </div>

@@ -3,9 +3,9 @@ import { useState } from "react";
 import { generate } from "random-words";
 import Timer from "../components/typingtest/Timer";
 import BootstrapModal from "../components/typingtest/BootstrapModal";
-import { formatSeconds } from "../utils/timeFormat";
+import { ProjectPage } from "../components/Projects";
 
-function TypingTest() {
+const TypingTest = ({ title }: ProjectPage) => {
   const getWords = (count: number) => {
     let words = generate(count);
     if (typeof words === "string") {
@@ -78,7 +78,7 @@ function TypingTest() {
 
   return (
     <div>
-      <h1 className="title">Typing Test</h1>
+      <h1 className="title">{title}</h1>
 
       <WordBox items={state.items} highlightIndex={state.currentIndex} />
       <div className="chat-bar">
@@ -90,30 +90,31 @@ function TypingTest() {
             onChange={handleInputChange}
           />
         </span>
-        <span className="timer">
-          {timing ? (
+
+        {timing ? (
+          <span className="timer">
             <Timer
               initialSeconds={timerInterval}
               onTimerDone={onFinish}
               setGlobalTime={setTime}
             />
-          ) : (
-            <div className="input-wrapper">
-              <input
-                type="text"
-                className="input-with-suffix"
-                value={timerInterval}
-                min="0"
-                max="99"
-                maxLength={2}
-                size={4}
-                disabled={disabled}
-                onChange={handleTimeChange}
-              />
-              <span className="suffix">(s)</span>
-            </div>
-          )}
-        </span>
+          </span>
+        ) : (
+          <div className="input-wrapper">
+            <input
+              type="text"
+              className="input-with-suffix"
+              value={timerInterval}
+              min="0"
+              max="99"
+              maxLength={2}
+              size={4}
+              disabled={disabled}
+              onChange={handleTimeChange}
+            />
+            <span className="suffix">(s)</span>
+          </div>
+        )}
         <button type="button" className="btn btn-danger" onClick={onFinish}>
           End Test
         </button>
@@ -131,5 +132,5 @@ function TypingTest() {
       </div>
     </div>
   );
-}
+};
 export default TypingTest;
