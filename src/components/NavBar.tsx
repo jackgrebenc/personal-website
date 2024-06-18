@@ -1,46 +1,45 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
 import { useState } from "react";
 import { Projects } from "./Projects";
-import home from "../assets/home.svg";
 
 function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <div className="pb-2">
-      <nav className="navbar navbar-expand navbar-light bg-light justify-content-center">
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/"
-                aria-current="page"
-                onClick={() => {
-                  if (isOpen) setIsOpen(!isOpen); // Toggle the open state on click
-                }}
-              >
-                Home
-              </NavLink>
-            </li>
+    <Navbar bg="light" data-bs-theme="light" expand="lg">
+      <Container>
+        <Navbar.Brand>Jack Grebenc</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <NavLink
+              className={`nav-link ${
+                location.pathname === "/" ? "active" : ""
+              }`}
+              to="/"
+              end
+            >
+              Home
+            </NavLink>
             {Projects.map((item) => (
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  to={item.link}
-                  aria-current="page"
-                  onClick={() => {
-                    if (isOpen) setIsOpen(!isOpen); // Toggle the open state on click
-                  }}
-                >
-                  {item.title}
-                </NavLink>
-              </li>
+              <NavLink
+                key={item.title}
+                className={`nav-link ${
+                  location.pathname === item.link ? "active" : ""
+                }`}
+                to={item.link}
+              >
+                {item.title}
+              </NavLink>
             ))}
-          </ul>
-        </div>
-      </nav>
-    </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
