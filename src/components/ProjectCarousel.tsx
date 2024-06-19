@@ -7,11 +7,7 @@ const ProjectCarousel = () => {
   return (
     <Carousel>
       {Projects.map((project, index) => (
-        <Carousel.Item
-          key={index}
-          className="carousel-item-custom"
-          interval={100000}
-        >
+        <Carousel.Item key={index} className="carousel-item-custom">
           <NavLink className="nav-link" to={project.link} aria-current="page">
             <StandardizedImage
               src={project.image}

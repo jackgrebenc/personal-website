@@ -26,7 +26,7 @@ body {
 }
 
 .title {
-  display: block;
+  display: inline-block;
   padding-left:2vw;
   padding-top:2vh;
   }
@@ -99,12 +99,12 @@ body {
 .navbar {
   display: flex;
   justify-content: flex-end;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .nav-link {
   position: relative;
   transition: color 0.3s;
+  width:fit-content;
 }
 
 .nav-link:hover {
@@ -114,14 +114,14 @@ body {
 .nav-link::after {
   content: '';
   display: block;
-  width: 0;
+  width:0;
   height: 2px;
   background: blue;
   transition: width 0.3s;
 }
 
 .nav-link:hover::after {
-  width: 100%;
+  width:100%
 }
 
 .nav-link.active {
@@ -129,10 +129,7 @@ body {
   color: gray;
 }
 
-.nav-link.active::after {
-  width: 100%;
-  background: blue;
-}
+
 
 .card {
   position: relative; /* Needed for absolute positioning of the pseudo-element */
