@@ -7,14 +7,22 @@ import { useState } from "react";
 import { Projects } from "./Projects";
 
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(false); // State to manage the collapse
   const location = useLocation();
+
+  const toggleNav = () => {
+    if (isOpen) setIsOpen(!isOpen);
+  }; // Function to toggle navbar collapse
 
   return (
     <Navbar bg="light" data-bs-theme="light" expand="lg">
       <Container>
-        <Navbar.Brand>Jack Grebenc</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Brand href="#">Jack Grebenc</Navbar.Brand>
+        <Navbar.Toggle
+          onClick={() => setIsOpen(!isOpen)}
+          aria-controls="basic-navbar-nav"
+        />
+        <Navbar.Collapse in={isOpen} id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink
               className={`nav-link ${
@@ -22,6 +30,7 @@ function NavBar() {
               }`}
               to="/"
               end
+              onClick={toggleNav} // Hide dropdown when item is clicked
             >
               Home
             </NavLink>
@@ -32,6 +41,7 @@ function NavBar() {
                   location.pathname === item.link ? "active" : ""
                 }`}
                 to={item.link}
+                onClick={toggleNav} // Hide dropdown when item is clicked
               >
                 {item.title}
               </NavLink>

@@ -1,16 +1,29 @@
 import { ProjectPage } from "../components/Projects";
 import YCbCr_Results from "../assets/YCbCr_Results.png";
 import mandrill from "../assets/mandrill.gif";
-import StandardizedImage from "../components/StandardizedImage";
+import { Title } from "../components/Title";
+
 const DeepLearningCAE = ({ title }: ProjectPage) => {
+  const buttonIcons = [
+    {
+      imageName: "fa fa-github",
+      link: "https://github.com/jackgrebenc/Optimized-CAE-using-YCbCr-colour-space",
+      newPage: true,
+    },
+    {
+      imageName: "fa fa-file-pdf-o",
+      link: "https://github.com/user-attachments/files/15551890/CISC.499.Report.pdf",
+      newPage: false,
+    },
+  ];
+
   return (
     <div className="main-contents">
-      <h1 className="title">{title}</h1>
+      <Title title={title} buttonIcons={buttonIcons} />
       <div className="box biography-box pt-3">
         <div
           style={{
             display: "grid",
-
             gridTemplateColumns: "0.1fr 0.5fr 0.1fr",
             columnGap: "5px",
           }}

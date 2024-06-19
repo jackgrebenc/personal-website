@@ -3,6 +3,7 @@ html, body {
   margin: 0;
   padding:0;
   font-family: Arial, sans-serif;
+  overflow-y: scroll;
 }
 
 body {
@@ -67,10 +68,12 @@ body {
 
 .timer {
   background-color:rgba(127, 255, 212, 0.5);
+  width:6vw;
   display:inline-block;
   border-radius:1vh;
   padding:0.2vw;
   font-size:2vw;
+  text-align:center;
 }
 
 .input-wrapper {
@@ -91,6 +94,12 @@ body {
   align-items: center;
   color: grey;
   pointer-events: none; /* Makes the suffix non-interactive */
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .nav-link {
@@ -170,12 +179,6 @@ body {
   border-radius:0.5vw;
 }
 
-.centerDiv {
-  display:"flex";
-  width:100%;
-  padding-top:3vh;
-}
-
 
 .carousel-caption-custom {
   position: absolute;
@@ -183,7 +186,6 @@ body {
   left: 0;
   right: 0;
   background-color: var(--dark-green);
-  padding: 2px;
   transition: bottom 0.5s ease;
   display:"flex";
   justify-content:flex-end;
@@ -219,5 +221,18 @@ body {
   opacity: 1;
 }
 
+.button-icon {
+  display: inline-block; 
+  padding: 8px;           
+  transition: transform 0.3s ease, color 0.3s ease; 
+  text-decoration: none; 
+  color: black;          
+}
+
+.button-icon:hover, .button-icon:focus {
+  color: #007bff;        
+  transform: scale(1.1); 
+  cursor: pointer; 
+}
 
 
