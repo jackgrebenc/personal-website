@@ -99,19 +99,21 @@ body {
 .navbar {
   display: flex;
   justify-content: flex-end;
+  font-size:2.3vh;
 }
 
-.nav-link {
+.custom-nav-link {
   position: relative;
   transition: color 0.3s;
   width:fit-content;
+  
 }
 
-.nav-link:hover {
+.custom-nav-link:hover {
   color: #007bff; /* Bootstrap primary color */
 }
 
-.nav-link::after {
+.custom-nav-link::after {
   content: '';
   display: block;
   width:0;
@@ -120,14 +122,16 @@ body {
   transition: width 0.3s;
 }
 
-.nav-link:hover::after {
+.custom-nav-link:hover::after {
   width:100%
 }
 
-.nav-link.active {
+.custom-nav-link.active {
   pointer-events: none;
   color: gray;
 }
+
+a.dropdown-item:active{ background-color: white; }
 
 .card {
   position: relative; /* Needed for absolute positioning of the pseudo-element */
@@ -229,5 +233,3 @@ body {
   transform: scale(1.1); 
   cursor: pointer; 
 }
-
-

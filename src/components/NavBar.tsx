@@ -4,13 +4,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { ButtonIcon } from "./ButtonIcon";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Projects } from "./Projects";
-import { Button } from "react-bootstrap";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+
   const location = useLocation();
 
   const toggleNav = () => {
@@ -49,7 +48,7 @@ function NavBar() {
         <Navbar.Collapse in={isOpen} id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink
-              className={`nav-link ${
+              className={`nav-link custom-nav-link ${
                 location.pathname === "/" ? "active" : ""
               }`}
               to="/"
@@ -62,7 +61,7 @@ function NavBar() {
                 <NavDropdown.Item key={item.title} onClick={toggleNav}>
                   <NavLink
                     key={item.title}
-                    className={`nav-link ${
+                    className={`nav-link custom-nav-link ${
                       location.pathname === item.link ? "active" : ""
                     }`}
                     to={item.link}
