@@ -28,15 +28,15 @@ export const deepLearningCAE: Project = {
     "Convolutional autoencoder using YCbCr colour space for lossy image compression",
 };
 
-export const finInstrumentPricer: Project = {
+export const instrumentPricer: Project = {
   image:
     "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F492538%2Fstock-market-data-on-led-screen.jpg&op=resize&w=700",
-  link: "/fin-instrument-pricer",
+  link: "/instrument-pricer",
   title: "Instrument Pricer",
   description: "Simulated instrument pricer using a tick architecture",
 };
 export const Projects: Project[] = [
   typingTest,
   deepLearningCAE,
-  finInstrumentPricer,
+  instrumentPricer,
 ];
