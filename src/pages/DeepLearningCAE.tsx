@@ -24,50 +24,41 @@ const DeepLearningCAE = ({ title }: ProjectPage) => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "0.1fr 0.5fr 0.1fr",
+            gridTemplateColumns: "0.2fr 0.8fr",
             columnGap: "5px",
           }}
         >
           <img
             src={mandrill}
             alt="loading..."
-            style={{ width: "100px", height: "auto" }}
+            style={{
+              width: "16vw",
+              height: "auto",
+              position: "relative",
+              top: "50%",
+              transform: "translateY(-50%)",
+            }}
           />
           <p>
-            Project available on{" "}
-            <a
-              href="https://github.com/jackgrebenc/Optimized-CAE-using-YCbCr-colour-space?tab=readme-ov-file"
-              target="_blank"
-            >
-              GitHub{" "}
-            </a>
-            <br />
-            <br />
-            <a href="https://github.com/user-attachments/files/15551890/CISC.499.Report.pdf">
-              Click here to download PDF of written report
-            </a>
+            <b>Abstract</b>
+            <br /> Image compression employs methods to reduce the cost of
+            storage and transmission of digital images. Historical methods in
+            lossy image compression have included JPEG, JPEG-200, BPG, as well
+            as many others. This work focuses on lossy image compression and the
+            use of deep learning methods, specifically convolutional
+            autoencoders (CAE). The CIFAR-100 dataset was used for the training
+            and testing of all architectures. A CAE architecture that uses the
+            YCbCr colour space is compared to an identical RGB architecture to
+            explore the performance differences of using different color spaces.
+            An optimized CAE for the YCbCr colour space is then implemented with
+            three architectures that produce varying bits per pixel (bpp)
+            compression rates. The results of using YCbCr were promising for
+            these architectures and it is possible that changing colour spaces
+            can improve the performances of other image-based models.
           </p>
         </div>
       </div>
-      <div className="box biography-box">
-        <p>
-          <b>Abstract</b>
-          <br /> Image compression employs methods to reduce the cost of storage
-          and transmission of digital images. Historical methods in lossy image
-          compression have included JPEG, JPEG-200, BPG, as well as many others.
-          This work focuses on lossy image compression and the use of deep
-          learning methods, specifically convolutional autoencoders (CAE). The
-          CIFAR-100 dataset was used for the training and testing of all
-          architectures. A CAE architecture that uses the YCbCr colour space is
-          compared to an identical RGB architecture to explore the performance
-          differences of using different color spaces. An optimized CAE for the
-          YCbCr colour space is then implemented with three architectures that
-          produce varying bits per pixel (bpp) compression rates. The results of
-          using YCbCr were promising for these architectures and it is possible
-          that changing colour spaces can improve the performances of other
-          image-based models.
-        </p>
-      </div>
+
       <div className="box biography-box">
         <p>
           <b>Highlighted Results</b>
