@@ -18,8 +18,10 @@ const DeepLearningCAE = ({ title }: ProjectPage) => {
   ];
 
   return (
-    <div className="main-contents">
-      <Title title={title} buttonIcons={buttonIcons} />
+    <div>
+      <div className="headline">
+        <Title title={title} buttonIcons={buttonIcons} />
+      </div>
       <div className="box biography-box pt-3">
         <div
           style={{

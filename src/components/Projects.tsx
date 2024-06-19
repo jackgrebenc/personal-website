@@ -5,7 +5,7 @@ interface Project {
   description: string;
 }
 
-//Page only needs a subst of Project props
+//Page only needs a subset of Project props
 export interface ProjectPage {
   title: string;
 }

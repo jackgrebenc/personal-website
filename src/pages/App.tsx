@@ -5,6 +5,7 @@ import TypingTest from "./TypingTest";
 import DeepLearningCAE from "./DeepLearningCAE";
 import { typingTest, deepLearningCAE } from "../components/Projects";
 import "bootstrap/dist/css/bootstrap.min.css";
+import About from "./About";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             path="/deep-learning-cae"
             element={<DeepLearningCAE title={deepLearningCAE.title} />}
           />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>

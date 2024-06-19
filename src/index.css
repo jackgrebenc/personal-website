@@ -18,19 +18,20 @@ body {
   --bg-boxes:rgba(229, 248, 255, 0.949);
   --boxes-shadow:0 0 0 3px rgba(0, 0, 139, 0.6),
   0 4px 6px rgba(0, 0, 0, 0.1);
-  --dark-green:#004d40;
+  --dark-green:#038b39;
 }
 
-.main-contents {
-  padding:1vh;
-}
 
+
+.headline {
+  text-align:center;
+}
 .title {
   display: inline-block;
   padding-left:2vw;
   padding-top:2vh;
   }
-  
+
 
 .box {
   background-color:var(--bg-boxes);
@@ -46,6 +47,12 @@ body {
   font-size:2vw;
   margin-top:2vh;
   border:0.2vh solid var(--dark-green);
+}
+.biography-box {
+  border-left: 5px solid var(--dark-green); /* Dark greenish-blue border */
+  padding: 20px;
+  margin: 20px 10px 20px;
+  border-radius: 5px;
 }
 
 .chat-bar {
@@ -164,12 +171,7 @@ a.dropdown-item:active{ background-color: white; }
   pointer-events: none; /* Ignore pointer events to allow interaction with card contents */
 }
 
-.biography-box {
-  border-left: 5px solid var(--dark-green); /* Dark greenish-blue border */
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-}
+
 
 .showFig {
   width:50vw;

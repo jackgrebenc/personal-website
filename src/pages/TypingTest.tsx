@@ -4,6 +4,7 @@ import { generate } from "random-words";
 import Timer from "../components/typingtest/Timer";
 import BootstrapModal from "../components/typingtest/BootstrapModal";
 import { ProjectPage } from "../components/Projects";
+import { Title } from "../components/Title";
 
 const TypingTest = ({ title }: ProjectPage) => {
   const getWords = (count: number) => {
@@ -78,8 +79,9 @@ const TypingTest = ({ title }: ProjectPage) => {
 
   return (
     <div>
-      <h1 className="title">{title}</h1>
-
+      <div className="headline">
+        <Title title={title} />
+      </div>
       <WordBox items={state.items} highlightIndex={state.currentIndex} />
       <div className="chat-bar">
         <span>
