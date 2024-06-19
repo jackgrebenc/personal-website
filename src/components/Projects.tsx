@@ -33,7 +33,7 @@ export const instrumentPricer: Project = {
     "https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F492538%2Fstock-market-data-on-led-screen.jpg&op=resize&w=700",
   link: "/instrument-pricer",
   title: "Instrument Pricer",
-  description: "Simulated instrument pricer using a tick architecture",
+  description: "Simulated instrument pricer using a q/kdb+ tick architecture",
 };
 export const Projects: Project[] = [
   typingTest,
