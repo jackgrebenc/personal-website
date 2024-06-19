@@ -18,7 +18,7 @@ body {
   --bg-boxes:rgba(229, 248, 255, 0.949);
   --boxes-shadow:0 0 0 3px rgba(0, 0, 139, 0.6),
   0 4px 6px rgba(0, 0, 0, 0.1);
-  --dark-green:#038b39;
+  --box-highlight:#03528b;
 }
 
 
@@ -46,10 +46,10 @@ body {
   width:97%;
   font-size:2vw;
   margin-top:2vh;
-  border:0.2vh solid var(--dark-green);
+  border:0.2vh solid var(--box-highlight);
 }
 .biography-box {
-  border-left: 5px solid var(--dark-green); /* Dark greenish-blue border */
+  border-left: 5px solid var(--box-highlight); /* Dark greenish-blue border */
   padding: 20px;
   margin: 20px 10px 20px;
   border-radius: 5px;
@@ -186,7 +186,7 @@ a.dropdown-item:active{ background-color: white; }
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--dark-green);
+  background-color: var(--box-highlight);
   transition: bottom 0.5s ease;
   display:"flex";
   justify-content:flex-end;
