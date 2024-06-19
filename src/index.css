@@ -129,8 +129,6 @@ body {
   color: gray;
 }
 
-
-
 .card {
   position: relative; /* Needed for absolute positioning of the pseudo-element */
   padding: 1rem;
