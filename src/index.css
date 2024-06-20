@@ -130,7 +130,9 @@ body {
   display: flex;
   justify-content: flex-end;
   font-size:2.3vh;
+  border-bottom:0.3vh solid #03528b;
 }
+
 
 .custom-nav-link {
   position: relative;
