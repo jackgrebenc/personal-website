@@ -7,6 +7,7 @@ const InstrumentPricer = ({ title }: ProjectPage) => {
       imageName: "fa-brands fa-github",
       link: "https://github.com/jackgrebenc/Optimized-CAE-using-YCbCr-colour-space",
       newPage: true,
+      size: "40px",
     },
   ];
   return (

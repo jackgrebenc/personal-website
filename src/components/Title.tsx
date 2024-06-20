@@ -16,6 +16,7 @@ export const Title = ({ title, buttonIcons }: TitleProps) => {
             imageName={buttonIcon.imageName}
             newPage={buttonIcon.newPage}
             link={buttonIcon.link}
+            size={buttonIcon.size}
           />
         ))}
       </h1>

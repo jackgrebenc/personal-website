@@ -9,11 +9,13 @@ const DeepLearningCAE = ({ title }: ProjectPage) => {
       imageName: "fa-brands fa-github",
       link: "https://github.com/jackgrebenc/Optimized-CAE-using-YCbCr-colour-space",
       newPage: true,
+      size: "40px",
     },
     {
       imageName: "fa-solid fa-file-pdf",
       link: "https://github.com/user-attachments/files/15551890/CISC.499.Report.pdf",
       newPage: false,
+      size: "40px",
     },
   ];
 
