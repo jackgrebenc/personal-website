@@ -19,7 +19,7 @@ function NavBar() {
   const buttonIcons = [
     {
       imageName: "fa-brands fa-github",
-      link: "https://github.com/jackgrebenc/Optimized-CAE-using-YCbCr-colour-space",
+      link: "https://github.com/jackgrebenc",
       newPage: true,
       size: "28px",
     },

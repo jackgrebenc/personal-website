@@ -12,7 +12,7 @@ export interface ProjectPage {
 
 export const typingTest: Project = {
   image:
-    "https://as2.ftcdn.net/v2/jpg/01/07/15/57/1000_F_107155766_OWfm9pfbU8xCEFDkhbXYjNAQomqddULr.jpg",
+    "https://img.livestrong.com/-/photos.demandstudios.com/getty/article/217/10/183705123.jpg",
   link: "/typing-test",
   title: "Typing Test",
   description:

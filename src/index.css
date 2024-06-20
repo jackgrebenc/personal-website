@@ -15,26 +15,16 @@ body {
   padding-top:60px;
 }
 
-.home-images {
-  position: relative;
-  top: 0;
-  left: 0;
+.home-screen {
+  display:inline-flex;
 
 }
-
 .home-headshot {
-  position:relative;
-  display:inline-block;
   top: 30px;
-  width:30%;
 }
 
 .overlay-text {
-  position:relative;
-  display:inline-block;
   padding: 1vw 2vw; 
-  font-size:2vw; 
-  text-align:center;
 }
 
 :root {
@@ -61,6 +51,9 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+.home-box {
+  align-self: center;
+}
 .word-box {
   padding:2vw; 
   text-align: center; 

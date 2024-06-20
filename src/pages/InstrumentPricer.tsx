@@ -5,7 +5,7 @@ const InstrumentPricer = ({ title }: ProjectPage) => {
   const buttonIcons = [
     {
       imageName: "fa-brands fa-github",
-      link: "https://github.com/jackgrebenc/Optimized-CAE-using-YCbCr-colour-space",
+      link: "https://github.com/jackgrebenc/Instrument_Pricer",
       newPage: true,
       size: "40px",
     },
