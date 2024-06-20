@@ -190,7 +190,7 @@ a.dropdown-item:active{ background-color: white; }
   position: relative;
   overflow: hidden;
   border-top:1vh solid #03528b;
-  border-radius:0.4vw;
+  margin-bottom:2vh;
 }
 
 .carousel-description {
