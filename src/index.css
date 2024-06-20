@@ -9,10 +9,41 @@ html, body {
 body {
   min-height: 100vh;  /* This ensures the body is at least the height of the viewport */
   background: linear-gradient(to bottom right, rgba(175, 202, 227, 0.989), rgba(255, 255, 255, 0.5));
+  /* background-image:url("background.jpg"); */
   background-attachment: fixed; /* This will fix the background relative to the viewport */
   background-repeat: no-repeat; /* Prevents the background from repeating */
+  padding-top:60px;
 }
 
+.home-images {
+  position: relative;
+  top: 0;
+  left: 0;
+
+}
+.home-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width:100%;
+}
+
+.home-headshot {
+  position: relative;
+  top: 30px;
+  width:30%;
+}
+
+.overlay-text {
+  position:absolute;
+  top:15%;
+  left: 50%;  
+  right:5%;
+  padding: 1vw 2vw; 
+  font-size: 1.5vw; 
+  text-align:center;
+}
 
 :root {
   --bg-boxes:rgba(229, 248, 255, 0.949);
@@ -21,11 +52,10 @@ body {
   --box-highlight:#03528b;
 }
 
-
-
 .headline {
   text-align:center;
 }
+
 .title {
   display: inline-block;
   padding-left:2vw;
@@ -140,46 +170,12 @@ body {
 
 a.dropdown-item:active{ background-color: white; }
 
-.card {
-  position: relative; /* Needed for absolute positioning of the pseudo-element */
-  padding: 1rem;
-  width: 200px;
-  height: 250px; /* Adjusted to a more reasonable height */
-  overflow: hidden; /* Ensures no content spills out */
-}
-.card-img-top {
-  width: 100%;  /* Makes image take full width of the card */
-  height: 150px; /* Fixed height for all images */
-  object-fit: cover; /* Ensures image covers the area without distorting */
-  object-position: center; /* Centers the image within the element */
-}
-
-.card-body {
-  height: calc(100px - 1rem); /* Remaining height after accounting for the image and padding */
-  overflow: auto; /* Adds scroll if content overflows */
-}
-
-
-.card:hover::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2); /* White overlay with 20% opacity */
-  pointer-events: none; /* Ignore pointer events to allow interaction with card contents */
-}
-
-
-
 .showFig {
   width:50vw;
   height:auto;
   justify-content:center;
   border-radius:0.5vw;
 }
-
 
 .carousel-caption-custom {
   position: absolute;

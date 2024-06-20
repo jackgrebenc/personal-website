@@ -38,7 +38,7 @@ function NavBar() {
   ];
 
   return (
-    <Navbar bg="light" data-bs-theme="light" expand="lg">
+    <Navbar className="fixed-top" bg="light" data-bs-theme="light" expand="lg">
       <Container>
         <Navbar.Brand href="#">Jack Grebenc</Navbar.Brand>
         <Navbar.Toggle

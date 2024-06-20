@@ -15,25 +15,23 @@ import About from "./About";
 function App() {
   return (
     <Router>
-      <div>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path={typingTest.link}
-            element={<TypingTest title={typingTest.title} />}
-          />
-          <Route
-            path={deepLearningCAE.link}
-            element={<DeepLearningCAE title={deepLearningCAE.title} />}
-          />
-          <Route
-            path={instrumentPricer.link}
-            element={<InstrumentPricer title={instrumentPricer.title} />}
-          />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path={typingTest.link}
+          element={<TypingTest title={typingTest.title} />}
+        />
+        <Route
+          path={deepLearningCAE.link}
+          element={<DeepLearningCAE title={deepLearningCAE.title} />}
+        />
+        <Route
+          path={instrumentPricer.link}
+          element={<InstrumentPricer title={instrumentPricer.title} />}
+        />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </Router>
   );
 }
