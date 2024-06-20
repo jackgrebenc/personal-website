@@ -84,6 +84,8 @@ const DeepLearningCAE = ({ title }: ProjectPage) => {
           <img src={YCbCr_Results} className=" showFig"></img>
         </div>
       </div>
+      <br />
+      <br />
     </div>
   );
 };

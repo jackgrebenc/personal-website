@@ -30,11 +30,11 @@ body {
 
 .overlay-text {
   position:absolute;
-  top:50%;
+  top:35%;
   left: 50%;  
   right:5%;
   padding: 1vw 2vw; 
-  font-size: 1.5vw; 
+  font-size: 16px; 
   text-align:center;
 }
 
@@ -51,8 +51,7 @@ body {
 
 .title {
   display: inline-block;
-  padding-left:2vw;
-  padding-top:2vh;
+  padding-top:5vh;
   }
 
 
@@ -205,6 +204,7 @@ a.dropdown-item:active{ background-color: white; }
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease, bottom 0.5s ease;
+  font-size:1.5vw;
 }
 
 .carousel-item-custom:hover .carousel-title {
