@@ -23,15 +23,17 @@ body {
 }
 
 .home-headshot {
-  position: relative;
+  position:relative;
+  display:inline-block;
   top: 30px;
   width:30%;
 }
 
 .overlay-text {
+  position:relative;
   display:inline-block;
   padding: 1vw 2vw; 
-  font-size: 2.5vh; 
+  font-size:2vw; 
   text-align:center;
 }
 
