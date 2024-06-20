@@ -203,7 +203,7 @@ a.dropdown-item:active{ background-color: white; }
   text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease, bottom 0.5s ease;
-  font-size:2vh;
+  font-size:1.6vw;
 }
 
 .carousel-item-custom:hover .carousel-title {
