@@ -184,6 +184,7 @@ a.dropdown-item:active{ background-color: white; }
   margin: 0;
   transition: transform 0.5s ease;
   bottom:0;
+  padding-bottom:10px;
 }
 
 .carousel-item-custom {

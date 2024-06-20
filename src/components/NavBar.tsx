@@ -56,15 +56,6 @@ function NavBar() {
             >
               Home
             </NavLink>
-            <NavLink
-              className={`nav-link custom-nav-link ${
-                location.pathname === "/about-me" ? "active" : ""
-              }`}
-              to="/about"
-              onClick={toggleNav} // Hide dropdown when item is clicked
-            >
-              About
-            </NavLink>
             <NavDropdown title="Projects" id="projects-nav-dropdown">
               {Projects.map((item) => (
                 <NavDropdown.Item key={item.title} onClick={toggleNav}>

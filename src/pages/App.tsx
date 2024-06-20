@@ -10,7 +10,6 @@ import {
   instrumentPricer,
 } from "../components/Projects";
 import "bootstrap/dist/css/bootstrap.min.css";
-import About from "./About";
 
 function App() {
   return (
@@ -30,7 +29,6 @@ function App() {
           path={instrumentPricer.link}
           element={<InstrumentPricer title={instrumentPricer.title} />}
         />
-        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
