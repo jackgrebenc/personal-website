@@ -75,17 +75,15 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
         <div className="hidden-xs collapse navbar-collapse justify-content-end">
-          <Navbar.Brand href="#">
-            {buttonIcons?.map((buttonIcon, index) => (
-              <ButtonIcon
-                key={index}
-                imageName={buttonIcon.imageName}
-                newPage={buttonIcon.newPage}
-                link={buttonIcon.link}
-                size={buttonIcon.size}
-              />
-            ))}
-          </Navbar.Brand>
+          {buttonIcons?.map((buttonIcon, index) => (
+            <ButtonIcon
+              key={index}
+              imageName={buttonIcon.imageName}
+              newPage={buttonIcon.newPage}
+              link={buttonIcon.link}
+              size={buttonIcon.size}
+            />
+          ))}
         </div>
       </Container>
     </Navbar>
