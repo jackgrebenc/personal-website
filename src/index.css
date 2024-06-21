@@ -17,11 +17,12 @@ body {
 
 .home-screen {
   display:inline-flex;
+  padding-bottom:40px;
 
 }
 .home-headshot {
   top: 30px;
-  width:40vw;
+  width:(30*1.01818181818)vw;
   height:30vh;
 }
 
