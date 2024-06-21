@@ -26,10 +26,6 @@ body {
   height:30vh;
 }
 
-.overlay-text {
-  padding: 1vw 2vw; 
-}
-
 :root {
   --bg-boxes:rgba(229, 248, 255, 0.949);
   --boxes-shadow:0 0 0 3px rgba(0, 0, 139, 0.6),
@@ -56,6 +52,7 @@ body {
 
 .home-box {
   align-self: center;
+  font-size:2vw;
 }
 .word-box {
   padding:2vw; 
@@ -83,7 +80,7 @@ body {
 
 .chat-bar input[type="text"] {
   height:5vh; /* Set a fixed height */
-  font-size:2vw;
+  font-size:4vh;
   border: 2px solid #ccc; /* Light grey border */
   border-radius: 5px; /* Rounded corners */
   padding: 0 1vw; /* Padding inside the text field */
@@ -96,7 +93,7 @@ body {
   display:inline-block;
   border-radius:1vh;
   padding:0.2vw;
-  font-size:2vw;
+  font-size:2.5vw;
   text-align:center;
 }
 

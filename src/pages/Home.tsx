@@ -16,7 +16,7 @@ const Home = () => {
           using the Navigation Bar.
           <br />
           <br />
-          Thank you for visiting my website.
+          Thank you for visiting my React-based website!
         </div>
       </div>
     </>
