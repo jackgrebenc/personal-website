@@ -87,6 +87,12 @@ body {
   flex-grow: 1; /* Allows the text field to grow */
 }
 
+@media (max-width: 1000px) {
+  .chat-bar input[type="text"] {
+    height:2.5vh;
+    font-size:1vh;
+  }
+}
 .timer {
   background-color:rgba(127, 255, 212, 0.5);
   width:6vw;
