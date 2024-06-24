@@ -24,6 +24,7 @@ body {
   top: 30px;
   width:(40*1.01818181818)vw;
   height:40vh;
+  align-self: center;
 }
 
 @media (max-width: 1000px) {
