@@ -22,8 +22,8 @@ body {
 }
 .home-headshot {
   top: 30px;
-  width:(30*1.01818181818)vw;
-  height:30vh;
+  width:(40*1.01818181818)vw;
+  height:40vh;
 }
 
 :root {
@@ -79,7 +79,7 @@ body {
 }
 
 .chat-bar input[type="text"] {
-  height:5vh; /* Set a fixed height */
+  height:4vh; /* Set a fixed height */
   font-size:3vh;
   border: 2px solid #ccc; /* Light grey border */
   border-radius: 5px; /* Rounded corners */

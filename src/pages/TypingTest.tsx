@@ -54,7 +54,7 @@ const TypingTest = ({ title }: ProjectPage) => {
       setTiming(true);
     }
 
-    if (word === state.items[state.currentIndex]) {
+    if (word.toLowerCase() === state.items[state.currentIndex].toLowerCase()) {
       setState({ ...state, currentIndex: state.currentIndex + 1 });
       return true;
     }
