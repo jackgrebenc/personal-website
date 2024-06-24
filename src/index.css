@@ -26,6 +26,13 @@ body {
   height:40vh;
 }
 
+@media (max-width: 1000px) {
+  .home-headshot {
+    width:(20*1.01818181818)vw;
+    height:20vh;
+  }
+}
+
 :root {
   --bg-boxes:rgba(229, 248, 255, 0.949);
   --boxes-shadow:0 0 0 3px rgba(0, 0, 139, 0.6),
@@ -89,8 +96,8 @@ body {
 
 @media (max-width: 1000px) {
   .chat-bar input[type="text"] {
-    height:2.5vh;
-    font-size:1vh;
+    height:3vh;
+    font-size:1.2vh;
   }
 }
 .timer {
