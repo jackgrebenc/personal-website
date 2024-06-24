@@ -4,7 +4,9 @@ html, body {
   padding:0;
   font-family: Arial, sans-serif;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
+
 
 body {
   min-height: 100vh;  /* This ensures the body is at least the height of the viewport */
