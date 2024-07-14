@@ -90,48 +90,26 @@ body {
 
 .chat-bar input[type="text"] {
   height:4vh; /* Set a fixed height */
-  font-size:3vh;
   border: 2px solid #ccc; /* Light grey border */
   border-radius: 5px; /* Rounded corners */
   padding: 1vw 1vw; /* Padding inside the text field */
   flex-grow: 1; /* Allows the text field to grow */
 }
 
-@media (max-width: 1000px) {
-  .chat-bar input[type="text"] {
-    height:3vh;
-    font-size:1.2vh;
-  }
-}
+
 .timer {
   background-color:rgba(127, 255, 212, 0.5);
-  width:6vw;
   display:inline-block;
   border-radius:1vh;
-  padding:0.2vw;
-  font-size:2.5vw;
+  padding:5px;
+  width:50px;
   text-align:center;
 }
 
 .input-wrapper {
-  position: relative;
-  display: inline-block;
+  margin-left:20px;
 }
 
-.input-with-suffix {
-  padding-right: 20px;
-}
-
-.suffix {
-  position: absolute;
-  right: 5px; 
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  color: grey;
-  pointer-events: none; /* Makes the suffix non-interactive */
-}
 
 .navbar {
   display: flex;
@@ -236,4 +214,27 @@ a.dropdown-item:active{ background-color: white; }
   color: #007bff;        
   transform: scale(1.1); 
   cursor: pointer; 
+}
+
+.outer-box {
+  display:flex;
+  align-items:center;
+}
+.both-box {
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+  background: lightblue;
+  display:inline;
+  overflow:hidden;
+}
+
+.content-box {
+  box-sizing: content-box;
+
+}
+
+.border-box {
+  box-sizing: border-box;
+
 }

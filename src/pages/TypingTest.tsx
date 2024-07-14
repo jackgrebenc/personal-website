@@ -22,7 +22,7 @@ const TypingTest = ({ title }: ProjectPage) => {
     currentIndex: 0,
   });
   const [timing, setTiming] = useState(false);
-  const [timerInterval, setTimerInterval] = useState(30);
+  const [timerInterval, setTimerInterval] = useState(60);
   const [time, setTime] = useState(timerInterval);
   const [disabled, setDisabled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ const TypingTest = ({ title }: ProjectPage) => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    if (checkValid(value)) {
+    if (checkValid(event.target.value)) {
       setValue("");
       setScore((currentScore) => currentScore + 1);
 
@@ -93,45 +93,30 @@ const TypingTest = ({ title }: ProjectPage) => {
           />
         </span>
 
-        {timing ? (
-          <span className="timer">
-            <Timer
-              initialSeconds={timerInterval}
-              onTimerDone={onFinish}
-              setGlobalTime={setTime}
-            />
-          </span>
-        ) : (
-          <div className="input-wrapper">
-            <input
-              type="text"
-              className="input-with-suffix"
-              value={timerInterval}
-              min="0"
-              max="99"
-              maxLength={2}
-              size={4}
-              disabled={disabled}
-              onChange={handleTimeChange}
-            />
-            <span className="suffix">(s)</span>
-          </div>
-        )}
+        <span className="timer">
+          <Timer
+            on={timing}
+            initialSeconds={timerInterval}
+            onTimerDone={onFinish}
+            setGlobalTime={setTime}
+          />
+        </span>
+
         <button type="button" className="btn btn-danger" onClick={onFinish}>
           End Test
         </button>
         <button type="button" className="btn btn-primary" onClick={onNewTest}>
           New Test
         </button>
-        {open && (
-          <BootstrapModal
-            message="Results are in!"
-            interval={timerInterval - time}
-            numWords={score}
-            onClose={onNewTest}
-          />
-        )}
       </div>
+      {open && (
+        <BootstrapModal
+          message="Results are in!"
+          interval={timerInterval - time}
+          numWords={score}
+          onClose={onNewTest}
+        />
+      )}
     </div>
   );
 };
