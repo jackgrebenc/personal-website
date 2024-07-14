@@ -90,6 +90,7 @@ const TypingTest = ({ title }: ProjectPage) => {
             value={value}
             disabled={disabled}
             onChange={handleInputChange}
+            autoCapitalize="off"
           />
         </span>
 
