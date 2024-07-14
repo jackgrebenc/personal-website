@@ -7,7 +7,7 @@ html, body {
 
 
 body {
-  min-height: 100vh;  /* This ensures the body is at least the height of the viewport */
+
   background: linear-gradient(to bottom right, rgba(175, 202, 227, 0.989), rgba(255, 255, 255, 0.5));
   /* background-image:url("background.jpg"); */
   background-attachment: fixed; /* This will fix the background relative to the viewport */
